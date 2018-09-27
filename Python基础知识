@@ -287,47 +287,75 @@ range()
   1.首先列表的一般形式为list = [xx,xx,xx,xx,...]。
     其中xx可以为整数int、浮点数float，也可以为字符串string。
     ·举例
-    >>>love = ["car","house",9,9.0,'heart']
-    >>>print(love)                             result >>>["car","house",9,9.0,'heart']
+    >>>love = ['car','house',9,9.0,'heart']
+    >>>print(love)                             result >>>['car','house',9,9.0,'heart']
   
   
   2.往列表里添加元素的三个内置函数：append()、extend()和insert(位置，'加入的元素')。
     其中append()和extend()均为在列表末尾依次加入，而insert更加灵活，可以选择位置插入所需的元素。
     append()括号中只能添加一个arguement（直接添加）：
     ·例如
-     >>>love = ["car","house",9,9.0,'heart']
+     >>>love = ['car','house',9,9.0,'heart']
         love.append('xiejiaonan')
      >>>print(love)                            
      result: 
-     >>>["car","house",9,9.0,'heart','xiejiaonan']
+     >>>['car','house',9,9.0,'heart','xiejiaonan']
+     
     而当其有两个arguement时，则会发生报错：
-    ·>>>love = ["car","house",9,9.0,'heart']
+    ·>>>love = ['car','house',9,9.0,'heart']
         love.append('xiejiaonan','money')      
      result:
      TyperError:append(）takes exactly one arguement(2 given)
     
     extend()括号中也只能添加一个arguement，这点同append相似，其不同之处在于extend原理是利用一个列表来扩张另一个列表：
     ·例如
-     >>>love = ["car","house",9,9.0,'heart']
+     >>>love = ['car','house',9,9.0,'heart']
         love.extend(['xiejiaonan'])
      >>>print(love)   
      result:
-     >>>["car","house",9,9.0,'heart','xiejiaonan']
-    ·>>>love = ["car","house",9,9.0,'heart']
+     >>>['car','house',9,9.0,'heart','xiejiaonan']
+     
+    ·>>>love = ['car','house',9,9.0,'heart']
         love.extend(['xiejiaonan','money'])
      >>>print(love)                            
      result: 
-     >>>["car","house",9,9.0,'heart','xiejiaonan','money']
+     >>>['car','house',9,9.0,'heart','xiejiaonan','money']
     
     insert(位置，'加入的元素')的用法:
     ·例如
-     >>>love = ["car","house",9,9.0,'heart']
+     >>>love = ['car','house',9,9.0,'heart']
         love.insert(2,'you')
         print(love)
      result:
-     >>>["car","house",'you',9,9.0,'heart']           
+     >>>['car','house','you',9,9.0,'heart']          
      
     ！！！在这里继续重申，Python中涉及数组等是从0开始算的。
+    
+    
+  3.从列表中提取元素和删除元素。
+    提取元素：列表名(所需要元素的位置)
+    ·>>>love = ['car','house',9,9.0,'heart']
+        print(love[2])
+     result:
+     >>>9
+    
+    删除元素有三种内置函数：remove、del和pop。
+    首先介绍remove：
+    ·>>>love = ['car','house',9,9.0,'heart']
+        love.remove('car')
+     result:
+     >>>['house',9,9.0,'heart']
+     
+    ·>>>love = ['car','house',9,9.0,'heart']
+        love.remove(9)
+     result:
+     >>>['house',9.0,'heart']
+     
+    介绍del，del的用法也比较简单，通常为del 列表名[所要删除元素所处的位置]
+    
+     
+     
+    
   
   
 
