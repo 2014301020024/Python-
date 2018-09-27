@@ -1,4 +1,4 @@
-1.首先列表的一般形式为list = [xx,xx,xx,xx,...]。
+  1.首先列表的一般形式为list = [xx,xx,xx,xx,...]。
     其中xx可以为整数int、浮点数float，也可以为字符串string。
     ·举例
     >>> love = ['car','house',9,9.0,'heart']
@@ -59,7 +59,8 @@
      >>> 9
          ['house',9,9.0]
     元素对换可以通过设一个简单的赋值数存储位置元素，然后对换一下就行了：
-    ·>>> love = ['car','house',9,9.0,'heart']
+    ·例如
+     >>> love = ['car','house',9,9.0,'heart']
          exchange = love[0]
          love[0] = love [1]
          love[1] = exchange
@@ -70,7 +71,8 @@
     删除元素有三种内置函数：remove()、del和pop()。
     REMOVE:
     首先介绍remove():###括号里接元素
-    ·>>> love = ['car','house',9,9.0,'heart']
+    ·例如
+     >>> love = ['car','house',9,9.0,'heart']
          love.remove('car')
      result:
      >>> ['house',9,9.0,'heart']
@@ -82,7 +84,8 @@
      
     DEL:
     介绍del，del的用法也比较简单，通常为del 列表名[所要删除元素所处的位置]:
-    ·>>>love = ['car','house',9,9.0,'heart']
+    ·例如
+     >>>love = ['car','house',9,9.0,'heart']
         del love[2]
         print(love)
      result:
@@ -110,3 +113,85 @@
      result:
      >>> 9                                      ### 这里是取出了9这个元素并返还给你（输出）
          ['car','house',9.0,'heart']            ### 输出pop后的列表
+         
+   
+   4.列表是可以比较大小的，数字与数字相互比较，字符串和字符串也能比较、python会自动换成ASCII码，但数字和字符串无法比较。
+     python中列表比较大小是逐次的，从第一位开始比，若已经分出大小，就代表了整个列表大小。
+     ·例如
+      >>> went = [123]
+          gone = [234]
+          print(went > gone)
+      result:
+      >>> False
+      
+      >>> went = [123,456]
+          gone = [234,123]
+          print(went > gone)
+      result:
+      >>> False
+      
+      >>> went = ['love',xx,...]
+          gone = ['hate',xx,...]
+          print(went > gone)
+      result:
+      >>> True
+      
+      >>> went = ['love',xx,...]
+          gone = [ 123,xx,...]
+          print(went > gone)
+      result:
+      此时会报错，程序不会运行。
+    
+    
+    5.列表可以运用乘法用来重复其中的元素：>>> love * 3 就是把love中的元素总的重写3遍
+     ·例如
+      >>> hate = [123,234,456]
+          hated = hate * 3
+          print(hated)
+      result:
+      >>> [123,234,456,123,234,456,123,234,456]
+      
+      计算该列表中123出现的次数，此时需要利用到一个内置函数：count
+      >>> print(hated.count(123))
+      result:
+      >>> 3
+      
+      内置函数index()则会返还元素在列表中的位置，只会返还所数元素重复的第一个所在的位置：
+      ·例如
+       >>> hated = [123,234,456,123,234,456,123,234,456]
+           print(hated.index(123))              ###从头开始数，第0个就是123
+       result:
+       >>> 0                                    ###所以返还了0
+       
+       >>> hated = [123,234,456,123,234,456,123,234,456]
+           print(hated.index(123,4,7))         ### 括号内后面两位表示你所要索引的范围，这里指第四位到第七位（不包括第七位）
+       result:
+       >>> 6
+      
+           
+    6.列表中的元素为列表时，此时要提取元素中的元素，需要利用 列表名[字列表位置][元素在子列表中的位置]。
+      ·例如
+       >>> hate = [123,234,['wo','hen','nan','guo'],456]
+           'hen' = hate[2][1]
+           
+      这里有两个很重要的函数：reverse和sort。reverse函数会把列表中的元素进行前后反转，sort则是从小到大进行整理（在没有其他说明的情况下）
+      ·例如
+       >>> sad = [98,23,56,2,1234]
+           print(sad.reverse())
+       result:
+       >>> [1234,2,56,23,98]
+       
+       >>> sad = [98,23,56,2,1234]
+           print(sad.sort())
+       result:
+       >>> [2,23,56,98,1234]
+       
+       反转整理：
+       >>> sad = [98,23,56,2,1234]
+           print(sad.sort(reverse = True))
+       result:
+       >>> [1234,98,56,23,2] 
+       
+     
+     7.Attention：“拷贝”后不受之前影响的话必须用 例：loved = love[:],而不是用loved = love；
+                  否则 loved仍会受 love列表变化的影响。
