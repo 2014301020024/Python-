@@ -287,71 +287,121 @@ range()
   1.首先列表的一般形式为list = [xx,xx,xx,xx,...]。
     其中xx可以为整数int、浮点数float，也可以为字符串string。
     ·举例
-    >>>love = ['car','house',9,9.0,'heart']
-    >>>print(love)                             result >>>['car','house',9,9.0,'heart']
+    >>> love = ['car','house',9,9.0,'heart']
+    >>> print(love)                             result >>>['car','house',9,9.0,'heart']
   
   
   2.往列表里添加元素的三个内置函数：append()、extend()和insert(位置，'加入的元素')。
     其中append()和extend()均为在列表末尾依次加入，而insert更加灵活，可以选择位置插入所需的元素。
     append()括号中只能添加一个arguement（直接添加）：
     ·例如
-     >>>love = ['car','house',9,9.0,'heart']
-        love.append('xiejiaonan')
-     >>>print(love)                            
+     >>> love = ['car','house',9,9.0,'heart']
+         love.append('xiejiaonan')
+     >>> print(love)                            
      result: 
-     >>>['car','house',9,9.0,'heart','xiejiaonan']
+     >>> ['car','house',9,9.0,'heart','xiejiaonan']
      
     而当其有两个arguement时，则会发生报错：
-    ·>>>love = ['car','house',9,9.0,'heart']
-        love.append('xiejiaonan','money')      
+    ·>>> love = ['car','house',9,9.0,'heart']
+         love.append('xiejiaonan','money')      
      result:
      TyperError:append(）takes exactly one arguement(2 given)
     
     extend()括号中也只能添加一个arguement，这点同append相似，其不同之处在于extend原理是利用一个列表来扩张另一个列表：
     ·例如
-     >>>love = ['car','house',9,9.0,'heart']
-        love.extend(['xiejiaonan'])
-     >>>print(love)   
+     >>> love = ['car','house',9,9.0,'heart']
+         love.extend(['xiejiaonan'])
+     >>> print(love)   
      result:
-     >>>['car','house',9,9.0,'heart','xiejiaonan']
+     >>> ['car','house',9,9.0,'heart','xiejiaonan']
      
-    ·>>>love = ['car','house',9,9.0,'heart']
-        love.extend(['xiejiaonan','money'])
+    ·>>> love = ['car','house',9,9.0,'heart']
+         love.extend(['xiejiaonan','money'])
      >>>print(love)                            
      result: 
-     >>>['car','house',9,9.0,'heart','xiejiaonan','money']
+     >>> ['car','house',9,9.0,'heart','xiejiaonan','money']
     
     insert(位置，'加入的元素')的用法:
     ·例如
-     >>>love = ['car','house',9,9.0,'heart']
-        love.insert(2,'you')
-        print(love)
+     >>> love = ['car','house',9,9.0,'heart']
+         love.insert(2,'you')
+         print(love)
      result:
-     >>>['car','house','you',9,9.0,'heart']          
+     >>> ['car','house','you',9,9.0,'heart']          
      
     ！！！在这里继续重申，Python中涉及数组等是从0开始算的。
     
     
   3.从列表中提取元素和删除元素。
-    提取元素：列表名(所需要元素的位置)
-    ·>>>love = ['car','house',9,9.0,'heart']
-        print(love[2])
+    提取元素：列表名(所需要元素的位置)，在这里设为love = [xx,xx,...]
+             love[1:5]:从记为1到5之前的位置的所有元素
+             love[:5] :从记为0到5之前的位置的所有元素
+             love[1:] :从记为1到列表最末尾元素包括最末尾元素
+             love[:]  :从开头到末尾，也就是简单把列表love拷贝了一遍
+    ·>>> love = ['car','house',9,9.0,'heart']
+         print(love[2])                   #python位置第一个记为0，这里记为2的为第三个，即数字9
+         print(love[1:4])                 #这里提取了从记为1开始到记为4前停止的元素，即['house',9,9.0]
      result:
-     >>>9
+     >>> 9
+         ['house',9,9.0]
+    元素对换可以通过设一个简单的赋值数存储位置元素，然后对换一下就行了：
+    ·>>> love = ['car','house',9,9.0,'heart']
+         exchange = love[0]
+         love[0] = love [1]
+         love[1] = exchange
+         print(love)
+     result:
+     >>> ['house','car',9,9.0,'heart']
+     
+    删除元素有三种内置函数：remove()、del和pop()。
+    REMOVE:
+    首先介绍remove():###括号里接元素
+    ·>>> love = ['car','house',9,9.0,'heart']
+         love.remove('car')
+     result:
+     >>> ['house',9,9.0,'heart']
+     
+    ·>>> love = ['car','house',9,9.0,'heart']
+         love.remove(9)
+     result:
+     >>> ['house',9.0,'heart']
+     
+    DEL:
+    介绍del，del的用法也比较简单，通常为del 列表名[所要删除元素所处的位置]:
+    ·>>>love = ['car','house',9,9.0,'heart']
+        del love[2]
+        print(love)
+     result:
+     >>> ['car','house',9.0,'heart']
+     
+     如果是直接del+列表名，则会将该列表全部删除（是指定义的包括列表名一起删除，不是单单括号内元素）
     
-    删除元素有三种内置函数：remove、del和pop。
-    首先介绍remove：
-    ·>>>love = ['car','house',9,9.0,'heart']
-        love.remove('car')
+    POP:
+    三者中pop的用法是比较复杂的，它是取出一个元素并返还给你。
+    如果列表名+.pop()括号里不加位置，则为从列表末尾依次删除一个元素并返还给你；
+    如果列表名+.pop()括号里加位置，则删除所指定位置的元素并返还给你，下例。
+    ·例如
+     >>> love = ['car','house',9,9.0,'heart']
+         a = love.pop()
+         print(a)
+         print(love)
      result:
-     >>>['house',9,9.0,'heart']
-     
-    ·>>>love = ['car','house',9,9.0,'heart']
-        love.remove(9)
+     >>> 'heart'
+         ['car','house',9,9.0]
+         
+     >>> love = ['car','house',9,9.0,'heart']
+         a = love.pop(2)
+         print(a)
+         print(love)
      result:
-     >>>['house',9.0,'heart']
+     >>> 9                                      ### 这里是取出了9这个元素并返还给你（输出）
+         ['car','house',9.0,'heart']            ### 输出pop后的列表
+         
+         
+         
+      
+    
      
-    介绍del，del的用法也比较简单，通常为del 列表名[所要删除元素所处的位置]
     
      
      
