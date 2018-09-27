@@ -1,0 +1,122 @@
+Attention！！！
+python中循环语句分为三种：“ if ”、“ while ”、 “ for ”。
+
+if 分支：
+· if XXX:
+     print(XXX)    # 或者直接是XXX
+  elif XXX:
+     print(XXX)
+  else:
+     print(XXX)
+· 示例：
+  将考生的分数输入并转换为ABCD的形式。
+  >>> g= int(input('请输入分数:'))
+      if 100 >= g > 90:           # 如果分数在90-100之间
+         print('A')               # 输出 'A'
+      elif 80 <= g <= 90:
+         print('B')
+      elif 60 <= g < 80:
+         print('C')
+      elif 0 <= g <= 60:
+         print('D')
+      else:   
+         print("你输错了")
+         
+· 悬挂“else”   
+python中由于严格的缩进可以有效的避免“悬挂else”
+    悬挂else：
+    例：在C语言中，初学者很容易被以下欺骗
+        if (a > 2)
+           if (a > 7)
+               printf( "good")
+        else
+           printf("bad")
+        C语言中依靠的是“就近原则”
+     而在python中如果缩进不规则，python程序同缩进同级别，缩进不严格程序不会运行。
+
+
+·python程序开发者为了代码的简洁，开发出了“  三元操作符 ” ！！！！！！！
+    例： >>> x,y = 3,4
+             small = x if x < y else 
+             print(small)
+         >>> 3
+       
+    
+whlie循环：  
+·  while 条件：
+       循环体
+·  可在if示例的基础上进行改进：
+   >>>g= int(input('请输入分数:'))
+      while True:                                       #while 后一直为真 代表循环一直持续
+         if 100 >= g > 90:                             
+            print('A')
+            g = int(input('请输入分数：'))
+         elif 80 <= g <= 90:
+            print('B')
+            g = int(input('请输入分数：'))
+         elif 60 <= g < 80:
+            print('C')
+            g = int(input('请输入分数：'))
+         elif 0 <= g <= 60:
+            print('D')
+            g = int(input('请输入分数：'))
+         else:   
+            print("你输错了")
+            g = int(input('请输入分数：'))
+   在需要退出循环or继续循环的时候，可以在while后接语句中恰用“continue” or “break”。
+      
+for循环：
+·  for 目标 in 表达式：
+      循环体
+·  使用示例：
+     1)>>>Lover = Jiaonan'
+        for i in Lover:             #依次循环Lover中文本字母
+           print(i,end=' ')         #输出每个字母并每次以空格结尾
+     >>>J i a o n a n
+     2)>>>Heart = ['我'，'真的'，'很喜欢','小喵喵吖']
+        for word in Heart:
+           print(word,len(word))    #输出字符和相应的字符长度
+     >>>我  1
+        真的  2
+        很喜欢  3
+        小喵喵吖  4
+          
+在for循环中，经常与range()搭配：
+range()
+·  语法：range([start],stop[,step=1])
+   这个BIF有三个参数，其中用括号括起来的两个表示这两个参数是可选的。
+   step=1表示第三个参数的值默认值为1(见例5）、6）)。
+   range这个BIF的作用是生成一个从start参数的值开始到stop参数的值结束的数字序列(但不包括stop数,见例2))。
+·  1)>>> print(range(5))         #这里只出现了stop参数，则默认为start参数为0，step参数为1
+     >>> range(0,5)
+   2)>>> print(list(range(0,5))  #这里转换为了列表的形式   
+     >>> [0,1,2,3,4]
+   3)>>> for i in range(4)
+          print(i)
+     >>> 0
+         1
+         2
+         3
+   4)>>> for i in range(1,4)
+          print(i)
+     >>> 1
+         2
+         3
+   5)>>> for i in range(1,10,3)      #第三个参数即为每一步为3，不出现就默认为step=1
+          print(i）
+     >>> 1
+         4
+         7
+         10
+   6)>>> for i in range(1,10,4)
+          print(i)
+     >>> 1
+         5
+         10
+  
+！！！python中常用 assert(断言) 用来检验语句正确性。
+     当这个关键字后边的条件为假的时候，程序自动崩溃并抛出AssertionError的异常。
+     例：>>>assert 3 > 4
+         >>> XXX
+             AssertionError
+      一般来说我们可以用它在程序中置入检查点，当需要确保程序中的某个条件一定为真才能让程序正常工作的话，assert就很有用了。
