@@ -480,7 +480,7 @@ range()
        
      
      7.Attention：“拷贝”后不受之前影响的话必须用 例：loved = love[:],而不是用loved = love；
-                  否则 loved仍会受 love列表变化的影响。
+                  否则 loved仍会受love列表变化的影响。
       
        
       
