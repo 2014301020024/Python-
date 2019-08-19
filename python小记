@@ -5,15 +5,16 @@
 对于库的更新，则可以在以上的基础上，输入指令“pip install --upgrade xxx” (xxx指你想要更新的库)
 
 
-*numpy包
+*numpy库
 一个用python实现的科学计算，包括：
 1、一个强大的N维数组对象Array；
 2、比较成熟的（广播）函数库；
 3、用于整合C/C++和Fortran代码的工具包；
 4、实用的线性代数、傅里叶变换和随机数生成函数。numpy和稀疏矩阵运算包scipy配合使用更加方便。
 NumPy（Numeric Python）提供了许多高级的数值编程工具，如：矩阵数据类型、矢量处理，以及精密的运算库。
+https://docs.scipy.org/doc/numpy/
 
-*scipy包
+*scipy库
 Scipy是处理插值、积分、优化、图像处理、常微分方程数值解的求解、信号处理等问题的包。
 它用于有效计算Numpy矩阵，使Numpy和Scipy协同工作，高效解决问题。
   - scipy.cluster        向量计算/Kmeans
@@ -32,7 +33,46 @@ Scipy是处理插值、积分、优化、图像处理、常微分方程数值解
     scipy.special        一些特殊的数学函数
     scipy.stats          统计
     
- 
+*matplotlib库
+用于数据视觉化，绘制图表等。具体可以参考如下链接进行实际的操作。
+https://blog.51cto.com/12731497/2154195
+
+*requests库
+requests是python实现的简单易用的HTTP库，使用起来比urllib简洁很多
+因为是第三方库，所以使用前需要cmd安装：pip install requests
+基本用法可见：1.https://www.cnblogs.com/mzc1997/p/7813801.html 
+            2.https://www.cnblogs.com/e493825156/p/9055444.html
+            
+*pybtex库
+Pybtex从文件中读取引文信息并生成格式化的参考书目。支持BibTeX样式文件，可以在Python中编写样式。
+目前了解参考文字格式：1.BibTex  2.BibTexXML  3.YAML-based format
+可生成输出以下格式（不支持传统BibTex格式）：1.LaTex  2.HTML  3.markdown  4.plain text
+https://pypi.org/project/pybtex/‘
+
+*pyaml库
+YAML是一种数据序列化格式，专为人类可读性和与脚本语言的交互而设计。PyYAML是Python的YAML解析器和发射器。
+PyYAML具有完整的YAML 1.1解析器，Unicode支持，pickle支持，有能力的扩展API和合理的错误消息。
+PyYAML支持标准的YAML标记，并提供允许表示任意Python对象的特定于Python的标记。
+PyYAML适用于从复杂配置文件到对象序列化和持久性的广泛任务。
+https://pypi.org/project/PyYAML/
+
+*tabulate库
+在Python，图书馆和一个命令行漂亮地打印表格数据实用程序。
+该库的主要用例是：1.打印小表而不麻烦：只需一个函数调用，格式化由数据本身引导
+               2.为轻量级纯文本标记创作表格数据：适合进一步编辑或转换的多种输出格式
+               3.可读混合文本和数字数据的表示：智能列对齐，可配置数字格式化，小数点对齐
+https://pypi.org/project/tabulate/
+
+*six库
+Six是Python 2和3兼容库。它提供了实用程序函数，用于平滑Python版本之间的差异，目的是编写兼容两个Python版本的Python代码。
+在线文档：https://six.readthedocs.io/
+https://pypi.org/project/six/
+
+
+
+
+
+
 
 
 
