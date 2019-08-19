@@ -1,9 +1,38 @@
 2019年8月19日
 
 *当安装了python后但是无法使用pip，此时可在电脑终端输入指令“pip install requests”
-*安装了pip之后，可以直接使用“pip install xxx”  (xxx指你想要安装的库，比如 pymatgen，numpy等等)
-*对于库的更新，则可以在以上的基础上，输入指令“pip install --upgrade xxx” (xxx指你想要更新的库)
+安装了pip之后，可以直接使用“pip install xxx”  (xxx指你想要安装的库，比如 pymatgen，numpy等等)
+对于库的更新，则可以在以上的基础上，输入指令“pip install --upgrade xxx” (xxx指你想要更新的库)
 
+
+*numpy包
+一个用python实现的科学计算，包括：
+1、一个强大的N维数组对象Array；
+2、比较成熟的（广播）函数库；
+3、用于整合C/C++和Fortran代码的工具包；
+4、实用的线性代数、傅里叶变换和随机数生成函数。numpy和稀疏矩阵运算包scipy配合使用更加方便。
+NumPy（Numeric Python）提供了许多高级的数值编程工具，如：矩阵数据类型、矢量处理，以及精密的运算库。
+
+*scipy包
+Scipy是处理插值、积分、优化、图像处理、常微分方程数值解的求解、信号处理等问题的包。
+它用于有效计算Numpy矩阵，使Numpy和Scipy协同工作，高效解决问题。
+  - scipy.cluster        向量计算/Kmeans
+    scipy.constants      物理和数学向量
+    scipy.fftpack        傅立叶变换 
+    scipy.intergate      积分程序
+    scipy.interpolate    插值
+    scipy.io             数据输入输出
+    scipy.linalg         线性代数程序
+    scipy.ndimage        n维图像包
+    scipy.odr            正交距离回归
+    scipy.optimize       优化
+    scipy.signal         信号处理
+    scipy.sparse         稀疏矩阵
+    scipy.spatial        空间数据结构和算法
+    scipy.special        一些特殊的数学函数
+    scipy.stats          统计
+    
+ 
 
 
 
