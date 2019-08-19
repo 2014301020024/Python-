@@ -1,0 +1,14 @@
+2019年8月19日
+
+*当安装了python后但是无法使用pip，此时可在电脑终端输入指令“pip install requests”
+*安装了pip之后，可以直接使用“pip install xxx”  (xxx指你想要安装的库，比如 pymatgen，numpy等等)
+*对于库的更新，则可以在以上的基础上，输入指令“pip install --upgrade xxx” (xxx指你想要更新的库)
+
+
+
+
+
+
+
+
+
