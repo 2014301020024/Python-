@@ -1,0 +1,41 @@
+class Jiandan:
+    def __init__(self, url, num):
+        self.url = url
+        self.req = request.Request(url,
+                                   headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 "
+                                                          "(KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"})
+        self.response = request.urlopen(self.req)
+        self.html = self.response.read().decode("utf-8")
+        self.num = num
+
+    def next_url(self):
+        for index, word in enumerate(self.html):
+            if self.html[index:index+20] == "current-comment-page":
+                next_url = "http:" + self.html[index+44:index+87]
+                break
+        return next_url
+
+
+    def get_picture(self):
+        picture_url = []
+        for index, word in enumerate(self.html):
+            if self.html[index:index+4] == "查看原图":
+                picture = "http:" + self.html[index+25:index+90].split()[0][:-1]
+                picture_url.append(picture)
+        for p_url in picture_url:
+            picture = request.urlopen(p_url)
+            picture_store = picture.read()
+            with open("C:\\Users\\喻达\\Desktop\\spider\\test\\" + str(self.num) + ".jpg", "wb") as file:
+                file.write(picture_store)
+                file.close()
+            self.num += 1
+            print(p_url)
+        if self.num <= 100:
+            nexturl = Jiandan.next_url(self)
+            next_one = Jiandan(nexturl, self.num)
+            next_one.get_picture()
+        return
+
+if __name__ == "__main__":
+    a = Jiandan("http://jandan.net/ooxx", 0)
+    a.get_picture()
